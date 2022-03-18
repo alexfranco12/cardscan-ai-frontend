@@ -1,11 +1,24 @@
-import { CardScan } from "./components"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MainLayout, InnerLayout } from './styles'
+import { 
+  HomePage,
+  SignUpPage,
+  NotFound
+} from './pages';
 
 function App() {
   return (
-    <div>
-      <h1>Research on CardScan AI</h1>
-      <CardScan />
-    </div>
+    <Router>
+      <MainLayout>
+        <InnerLayout>
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/signup" element={<SignUpPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </InnerLayout>
+      </MainLayout>
+    </Router>
   );
 }
 
