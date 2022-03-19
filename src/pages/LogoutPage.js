@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { CardScan } from '../components';
 
-export const HomePage = () => {
+export const LogoutPage = () => {
 
   const handleOnClick = () => {
-    fetch(`http://localhost:3001/logged_in`, {
+    fetch(`http://localhost:3001/logout`, {
       credentials: 'include',
-      method: 'GET',
+      method: 'DELETE',
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
@@ -22,20 +21,17 @@ export const HomePage = () => {
   }
   
   return (
-    <HomePageStyled>
-      <h1>Home Page</h1>
+    <LogoutPageStyled>
+      <h1>Logout</h1>
       <button
         onClick={handleOnClick}
-        > Am I Logged In?
+        > Logout
       </button>
-      <div>
-        <CardScan />
-      </div>
-    </HomePageStyled>
+    </LogoutPageStyled>
   )
 };
 
-const HomePageStyled = styled.div`
+const LogoutPageStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr) 180px;
   grid-template-rows: 5rem auto;
