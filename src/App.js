@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MainLayout, InnerLayout } from './styles'
 import { 
@@ -8,8 +9,8 @@ import {
   NotFound
 } from './pages';
 
-function App() {
-  return (
+const App = () => {
+  return(
     <Router>
       <MainLayout>
         <InnerLayout>
@@ -23,7 +24,7 @@ function App() {
         </InnerLayout>
       </MainLayout>
     </Router>
-  );
-}
+  )
+};
 
 export default App;

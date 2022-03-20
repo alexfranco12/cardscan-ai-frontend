@@ -6,11 +6,9 @@ import { GlobalStyles } from './styles'
 import Theme from './styles/theme'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={Theme}>
-      <GlobalStyles />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
+  <ThemeProvider theme={Theme}>
+    <GlobalStyles />
+    <App />,
+  </ThemeProvider>,
   document.getElementById('root')
 );

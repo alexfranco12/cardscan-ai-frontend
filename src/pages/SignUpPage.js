@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from 'styled-components'
 
 const initialFormState = {
@@ -30,6 +30,7 @@ export const SignUpPage = () => {
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      setMessage("Success")
     })
     .catch((error) => {
       console.error('Error:', error);
