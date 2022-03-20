@@ -4,6 +4,24 @@ import styled from 'styled-components';
 import { NavItem } from '..';
 
 export const NavBar = () => {
+  const handleOnClick = () => {
+    fetch(`http://localhost:3001/logout`, {
+      credentials: 'include',
+      method: 'DELETE',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
   return ( 
     <NavBarStyled>
       <div className="header">
@@ -15,7 +33,10 @@ export const NavBar = () => {
       <div className="links">
         <NavItem href={"/signup"} text={"register"} />
         <NavItem href={"/login"} text={"login"} />
-        <NavItem href={"/logout"} text={"logout"} />
+        <button
+          onClick={handleOnClick}
+          > Logout
+        </button>
       </div>
     </NavBarStyled>
    );

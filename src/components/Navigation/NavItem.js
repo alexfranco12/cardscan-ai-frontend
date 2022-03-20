@@ -11,9 +11,7 @@ export const NavItem = ({ href, text }) => {
 };
 
 const NavItemStyled = styled.div`
-  &:not(:last-of-type) {
-    margin-right: 3rem;
-  }
+  margin-right: 3rem;
   & a {
     color: ${props => props.theme.colors.dark2};
       &:hover {

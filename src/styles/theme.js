@@ -1,6 +1,6 @@
 export const Theme = {
   fonts: {
-    main: "Oswald, sans-serif",
+    main: "Work Sans, sans-serif",
     code: "Roboto Mono, monospace",
     typewriter: "Cutive, serif",
   },

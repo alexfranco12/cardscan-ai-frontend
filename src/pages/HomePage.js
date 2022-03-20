@@ -24,12 +24,16 @@ export const HomePage = () => {
   
   return (
     <HomePageStyled>
-      <h1>Home Page</h1>
-      <button
-        onClick={handleOnClick}
-        > Am I Logged In?
-      </button>
-      <div>
+      <div className="title">
+        <h1>Home Page</h1>
+      </div>
+      <div className="logged_in">
+        <button
+          onClick={handleOnClick}
+          > Am I Logged In?
+        </button>
+      </div>
+      <div className="card_scan">
         <CardScan />
       </div>
     </HomePageStyled>
@@ -37,8 +41,30 @@ export const HomePage = () => {
 };
 
 const HomePageStyled = styled.div`
+  position: relative;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 180px;
-  grid-template-rows: 5rem auto;
-  grid-gap: 0 1rem;
+  grid-template-columns: repeat(6, minmax(auto, 1fr));
+  grid-template-rows: 4.8rem auto;
+  & .title {
+    grid-column: 1 / span 3;
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & h1 {
+      font-size: large;
+    }
+  }
+  & .logged_in {
+    grid-column: 4 / span 3;
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & .card_scan {
+    grid-column: 1 / span 6;
+    grid-row-start: 2;
+  }
 `;
