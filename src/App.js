@@ -5,6 +5,7 @@ import {
   HomePage,
   SignUpPage,
   LoginPage,
+  ProfilePage,
   NotFound
 } from './pages';
 
@@ -17,6 +18,7 @@ const App = () => {
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="/signup" element={<SignUpPage />} />
             <Route exact path="/login" element={<LoginPage />} />
+            <Route exact path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </InnerLayout>

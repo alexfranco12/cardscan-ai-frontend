@@ -110,6 +110,8 @@ export const SignUpPage = () => {
 const SignUpPageStyled = styled.div`
   grid-column: 2 / span 12;
   grid-row: 1;
+  position: relative;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;

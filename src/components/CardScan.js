@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components";
 import { CardScanView } from "@cardscan.ai/insurance-cardscan-react";
 
@@ -9,9 +9,19 @@ export const CardScan = () => {
     startingTitle: "Get Started", 
     startingSubtitle: "Hold card inside rectangle" 
   }
+  let navigate = useNavigate();
   
   const onSuccess = (card) => {
     console.log("success!", card);
+    const { clientName, memberName, memberNumber, payerName, planName, planId } = card.details
+    navigate('/profile', { state: {
+      client: clientName.value || null,
+      member: memberName.value || null,
+      memberId: memberNumber.value || null,
+      payer: payerName.value || null,
+      plan: planName.value || null,
+      planId: planId.value || null
+    }});
   };
   
   const loadScanView = () => {  
@@ -45,7 +55,7 @@ export const CardScan = () => {
             onSuccess={onSuccess}
             // onCancel={onCancel}
             // onError={onError}
-            content={content}
+            // content={content}
             // closeButton={closeButton}
             // successIndicator={successIndicator}
             // errorIndicator={errorIndicator}
@@ -73,12 +83,12 @@ const CardScanStyled = styled.div`
   & .card_scan_view {
     grid-column: 1 / span 6;
     grid-row-start: 1;
-    & .root {
+    /* & .root {
       width: 100%;
       height: 75vh;
       & .close-btn {
         z-index: 99;
       }
-    }
+    } */
   }
 `;

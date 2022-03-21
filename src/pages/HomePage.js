@@ -42,7 +42,7 @@ export const HomePage = () => {
 
 const HomePageStyled = styled.div`
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: grid;
   grid-template-columns: repeat(6, minmax(auto, 1fr));
   grid-template-rows: 4.8rem auto;
