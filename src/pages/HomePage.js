@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { CardScan } from '../components';
+import { Link } from "react-router-dom"
 
 export const HomePage = () => {
 
@@ -32,6 +33,11 @@ export const HomePage = () => {
           onClick={handleOnClick}
           > Am I Logged In?
         </button>
+        <Link to={"/upload-card"}>
+          <button>
+            Upload Card
+          </button>
+        </Link>
       </div>
       <div className="card_scan">
         <CardScan />

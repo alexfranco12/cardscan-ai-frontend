@@ -11,11 +11,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[fullhash:8].js',
+    publicPath: '/'
   },
   devtool: "source-map",
   devServer: {
     port: 3000,
     static: path.resolve(__dirname, 'dist'),
+    historyApiFallback: true,
     hot: true
   },
   plugins: [

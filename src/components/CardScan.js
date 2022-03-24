@@ -13,14 +13,9 @@ export const CardScan = () => {
   
   const onSuccess = (card) => {
     console.log("success!", card);
-    const { clientName, memberName, memberNumber, payerName, planName, planId } = card.details
     navigate('/profile', { state: {
-      client: clientName.value || null,
-      member: memberName.value || null,
-      memberId: memberNumber.value || null,
-      payer: payerName.value || null,
-      plan: planName.value || null,
-      planId: planId.value || null
+      cardId: card.cardId,
+      token: token
     }});
   };
   
@@ -37,7 +32,7 @@ export const CardScan = () => {
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
-      setToken(data.token.Token);
+      setToken(data.session.Token);
     })
     .catch((error) => {
       console.error('Error:', error);
